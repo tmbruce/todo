@@ -2,9 +2,15 @@ let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.ts',
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['js', 'ts'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@store': path.resolve(__dirname, 'src/store'),
+        },
     },
     module: {
         rules: [
