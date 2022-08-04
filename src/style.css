@@ -1,7 +1,7 @@
 :root {
-
 /* Light Mode */
     --logo-color: rgb(203, 78, 58);
+    --logo-color-light: rgb(211, 117, 106);
     --text-light: white;
 /* Dark Mode */
 }
@@ -32,11 +32,16 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.menu-img {
-    filter: brightness(0) invert(1);
-    height: 2rem;
+.header-left {
+    display: flex;
 }
-
+.icon-btn {
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+.icon-btn:hover {
+    cursor:pointer;
+}
 
 .nav {
     grid-area: nav;

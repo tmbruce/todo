@@ -1,16 +1,14 @@
 import Menu from '@assets/menu.svg';
-import createSVG from "../utils/svg";
+import Home from '@assets/home.svg';
+
+import iconBtn from "../utils/iconBtn";
 
 const Header = () => {
-    let headerContainer = document.querySelector('.top-bar')!;
+    let headerLeft = document.querySelector('.header-left')!;
+    let menuIcon = iconBtn(Menu, 'menu-icon icon-btn');
+    let homeIcon = iconBtn(Home, 'home-icon icon-btn');
 
-    let headerLeft = document.createDocumentFragment();
-    let headerRight = document.createDocumentFragment();
-    let menuImg = createSVG(Menu, 'menu-img');
-
-    headerLeft.append(menuImg);
-
-    headerContainer.append(headerLeft);
+    headerLeft.append(menuIcon, homeIcon);
 }
 
 export default Header;
