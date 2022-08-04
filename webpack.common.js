@@ -4,14 +4,20 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/index.ts',
     resolve: {
-        extensions: ['js', 'ts'],
+        extensions: ['.js', '.ts'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@components': path.resolve(__dirname, 'src/components'),
-            '@store': path.resolve(__dirname, 'src/store'),
+            '@events': path.resolve(__dirname, 'src/store/events'),
         },
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Todo',
+            template: './src/template.html'
+        })
+    ],
     module: {
         rules: [
             {
@@ -33,12 +39,6 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Todo',
-            template: './src/template.html'
-        })
-    ],
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),

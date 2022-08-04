@@ -7,7 +7,4 @@ module.exports = merge(common,{
         static: './dist'
     },
     devtool: 'inline-source-map',
-    plugins: [
-
-    ]
 });

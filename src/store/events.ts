@@ -1,9 +1,10 @@
-let events = (() => {
+export let events = (() => {
     let events: { [eventName: string]: Function[] } = {};
     const on = (eventName: string, callback: Function) => {
         events[eventName] = events[eventName] || [];
         events[eventName].push(callback);
     }
+
     const off = (eventName: string, callback: Function) => {
         if (events[eventName]) {
             for (let i = 0; i < events[eventName].length; i++) {
@@ -14,6 +15,7 @@ let events = (() => {
             }
         }
     }
+
     const emit = (eventName: string, data: any) => {
         if (events[eventName]) {
             events[eventName].forEach(function (callback) {
@@ -21,6 +23,6 @@ let events = (() => {
             });
         }
     }
+
     return {on, off, emit};
 })();
-export default events;

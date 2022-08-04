@@ -1,0 +1,46 @@
+:root {
+
+/* Light Mode */
+    --logo-color: rgb(203, 78, 58);
+    --text-light: white;
+/* Dark Mode */
+}
+ol, ul {
+    list-style: none;
+}
+svg {
+    display: block;
+}
+body {
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+.container {
+    display: grid;
+    grid-template-areas: "head head"
+                         "nav main";
+}
+.top-bar {
+    grid-area: head;
+    height: 3rem;
+    width: 100vw;
+    background-color: var(--logo-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu-img {
+    filter: brightness(0) invert(1);
+    height: 2rem;
+}
+
+
+.nav {
+    grid-area: nav;
+}
+.main-content {
+    grid-area: main;
+}
