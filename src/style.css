@@ -1,5 +1,6 @@
 :root {
 /* Light Mode */
+    --percent-done: 75;
     --logo-color: rgb(203, 78, 58);
     --logo-color-light: rgb(211, 117, 106);
     --text-light: white;
@@ -37,6 +38,20 @@ body {
     display: flex;
     align-items: center;
 }
+.header-right {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+}
+.header-right .icon-btn {
+    margin-left: 1rem;
+    margin-right: 0;
+    height: 1.3rem;
+}
+.tasks-done {
+    color: var(--text-light);
+    margin-left: .4rem;
+}
 .icon-btn {
     height: 1.3rem;
     margin-right: 1rem;
@@ -50,20 +65,37 @@ body {
 .header-search {
     background-color: var(--logo-color-light);
     border:none;
+    width: 12rem;
     border-radius: .2rem;
-    color: white;
+    color: var(--text-light);
     background-image: url('./assets/search.svg');
     background-repeat: no-repeat;
     background-size: 28px 28px;
-    background-position: left center;
+    background-position: 3% 50%;
     height: 2rem;
     padding-left: 2.1rem;
 }
 .header-search::placeholder {
-    color: white;
+    color: var(--text-light);
 }
 input:focus {
     outline:none;
+}
+.circle-icon {
+    height: 1.2rem;
+    width: 1.2rem;
+    position: relative;
+    border: 1px solid var(--text-light);
+    border-radius: 50%;
+}
+.circle-icon:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--text-light) calc(var(--percent-done)*1%),#0000 0);
+    border: 2px solid var(--logo-color);
+
 }
 .nav {
     grid-area: nav;
