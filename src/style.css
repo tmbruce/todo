@@ -33,16 +33,38 @@ body {
     justify-content: space-between;
 }
 .header-left {
+    margin-left: 1rem;
     display: flex;
+    align-items: center;
 }
 .icon-btn {
-    height: 1.5rem;
+    height: 1.3rem;
     margin-right: 1rem;
+}
+.search-icon:hover {
+    cursor: pointer;
 }
 .icon-btn:hover {
     cursor:pointer;
 }
-
+.header-search {
+    background-color: var(--logo-color-light);
+    border:none;
+    border-radius: .2rem;
+    color: white;
+    background-image: url('./assets/search.svg');
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    background-position: left center;
+    height: 2rem;
+    padding-left: 2.1rem;
+}
+.header-search::placeholder {
+    color: white;
+}
+input:focus {
+    outline:none;
+}
 .nav {
     grid-area: nav;
 }
