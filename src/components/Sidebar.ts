@@ -9,14 +9,12 @@ const Sidebar = () => {
             nav.style.width = '0';
             sidebarOpen = !sidebarOpen;
         } else {
-            nav.style.width = '18rem';
+            nav.style.width = '20rem';
             sidebarOpen = !sidebarOpen;
         }
     }
 
-
     events.subscribe('sidebarToggle', toggleSidebar)
-
 }
 
 export default Sidebar;

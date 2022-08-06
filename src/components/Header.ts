@@ -1,7 +1,7 @@
 import Menu from '@assets/menu.svg';
 import Home from '@assets/home.svg';
 import Search from '@assets/search.svg';
-import Plus from '@assets/plus.svg';
+import Add from '@assets/add.svg';
 import Question from '@assets/question.svg';
 import Bell from '@assets/bell.svg';
 import Avatar from '@assets/man.png';
@@ -20,7 +20,7 @@ const Header = () => {
     inputField.append(searchIcon);
 
     let headerRight = document.querySelector('.header-right')!;
-    let addIcon = iconBtn(Plus, 'plus-icon icon-btn');
+    let addIcon = iconBtn(Add, 'plus-icon icon-btn');
     let tasksContainer = htmlElement('div', 'tasks-container');
     let circleIcon = htmlElement('div', 'circle-icon');
     let tasksDone = htmlElement('div', 'tasks-done');

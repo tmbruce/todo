@@ -6,6 +6,7 @@
     --sidebar-color: rgb(250, 250, 250);
     --sidebar-hover-color: rgb(239, 239, 239);
     --text-light: white;
+    --green-accent: rgb(129, 175, 135);
 /* Dark Mode */
 }
 ol, ul {
@@ -118,10 +119,11 @@ input:focus {
     grid-area: main;
 }
 .nav {
-    width: 18rem;
+    width: 20rem;
     background-color: var(--sidebar-color);
     height: 100%;
     grid-area: nav;
     transition: ease-in-out 200ms;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
