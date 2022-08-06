@@ -123,7 +123,7 @@ input:focus {
     background-color: var(--sidebar-color);
     height: 100%;
     grid-area: nav;
-    transition: ease-in-out 200ms;
+    transition: ease-out 200ms;
     overflow-x: hidden;
     overflow-y: scroll;
 }

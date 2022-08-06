@@ -1,8 +1,13 @@
+import Inbox from '@assets/inbox.svg';
+
+
 import events from '../store/events';
 
 const Sidebar = () => {
     let sidebarOpen = true;
     let nav = document.querySelector('.nav')! as HTMLDivElement;
+
+
 
     const toggleSidebar = () => {
         if (sidebarOpen) {
