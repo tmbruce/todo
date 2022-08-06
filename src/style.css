@@ -3,14 +3,13 @@
     --percent-done: 75;
     --logo-color: rgb(203, 78, 58);
     --logo-color-light: rgb(211, 117, 106);
+    --sidebar-color: rgb(250, 250, 250);
+    --sidebar-hover-color: rgb(239, 239, 239);
     --text-light: white;
 /* Dark Mode */
 }
 ol, ul {
     list-style: none;
-}
-svg {
-    display: block;
 }
 body {
     font-family: sans-serif;
@@ -18,16 +17,19 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px;
+    box-sizing: border-box;
 }
 .container {
+    height: 100vh;
     display: grid;
     grid-template-areas: "head head"
                          "nav main";
+    grid-template-rows: 3rem auto;
 }
 .top-bar {
     grid-area: head;
     height: 3rem;
-    width: 100vw;
+    width: 100%;
     background-color: var(--logo-color);
     display: flex;
     align-items: center;
@@ -37,11 +39,13 @@ body {
     margin-left: 1rem;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 .header-right {
     margin-right: 1rem;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 .header-right .icon-btn {
     margin-left: 1rem;
@@ -55,12 +59,15 @@ body {
 .icon-btn {
     height: 1.3rem;
     margin-right: 1rem;
+    padding: 5px;
 }
 .search-icon:hover {
     cursor: pointer;
 }
-.icon-btn:hover {
+.icon-btn:hover, .tasks-container:hover{
     cursor:pointer;
+    background-color: var(--logo-color-light);
+    border-radius: .25rem;
 }
 .header-search {
     background-color: var(--logo-color-light);
@@ -73,7 +80,7 @@ body {
     background-size: 28px 28px;
     background-position: 3% 50%;
     height: 2rem;
-    padding-left: 2.1rem;
+    padding-left: calc(2.1rem + 5px);
 }
 .header-search::placeholder {
     color: var(--text-light);
@@ -81,12 +88,17 @@ body {
 input:focus {
     outline:none;
 }
+.circle-icon:hover {
+    cursor: pointer;
+    background-color: var(--logo-color-light);
+}
 .circle-icon {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.3rem;
+    width: 1.3rem;
     position: relative;
     border: 1px solid var(--text-light);
     border-radius: 50%;
+    margin-left: 5px;
 }
 .circle-icon:before {
     content: "";
@@ -95,11 +107,21 @@ input:focus {
     inset: 0;
     background: conic-gradient(var(--text-light) calc(var(--percent-done)*1%),#0000 0);
     border: 2px solid var(--logo-color);
-
 }
-.nav {
-    grid-area: nav;
+.tasks-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-left: .8rem;
 }
 .main-content {
     grid-area: main;
+}
+.nav {
+    width: 18rem;
+    background-color: var(--sidebar-color);
+    height: 100%;
+    grid-area: nav;
+    transition: ease-in-out 200ms;
+    overflow-x: hidden;
 }

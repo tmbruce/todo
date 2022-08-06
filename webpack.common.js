@@ -10,7 +10,7 @@ module.exports = {
             '@utils': path.resolve(__dirname, 'src/utils'),
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@components': path.resolve(__dirname, 'src/components'),
-            '@events': path.resolve(__dirname, 'src/store/events'),
+            '@store': path.resolve(__dirname, 'src/store/'),
         },
     },
     plugins: [
