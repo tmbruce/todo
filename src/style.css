@@ -90,12 +90,20 @@ body {
     height: 1.8rem;
     padding-left: calc(2.1rem + 5px);
     margin-left: 3px;
+    transition: ease-out 150ms;
 }
 .header-search::placeholder {
     color: var(--text-light);
 }
+.header-search:focus::placeholder {
+    color: var(--text-dark);
+}
 input:focus {
     outline:none;
+    width: 25rem;
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    transition: ease-out 150ms;
 }
 .circle-icon:hover {
     cursor: pointer;
@@ -128,6 +136,9 @@ input:focus {
 }
 .nav {
     width: 20rem;
+    position: absolute;
+    top: 2.8rem;
+    left: 0;
     background-color: var(--sidebar-color);
     height: calc(100vh - 2.8rem);
     grid-area: nav;

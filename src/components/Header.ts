@@ -1,6 +1,7 @@
 import Menu from '@assets/menu.svg';
 import Home from '@assets/home.svg';
 import Search from '@assets/search.svg';
+import SearchDark from '@assets/search_dark.svg';
 import Add from '@assets/add.svg';
 import Question from '@assets/question.svg';
 import Bell from '@assets/bell.svg';
@@ -16,7 +17,7 @@ const Header = () => {
     let homeIcon = iconBtn(Home, 'home-icon icon-btn');
     let searchIcon = iconBtn(Search, 'search-icon');
     let inputField = htmlElement('input', 'header-search') as HTMLInputElement;
-    inputField.placeholder = 'Find';
+    inputField.placeholder = 'Search';
     inputField.append(searchIcon);
 
     let headerRight = document.querySelector('.header-right')!;
@@ -33,6 +34,16 @@ const Header = () => {
     inputField.addEventListener('input', (e) => {
         let searchBox = e.target as HTMLInputElement;
         events.update('searchBoxTerm', searchBox.value);
+    });
+
+    inputField.addEventListener('focusin', () => {
+        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
+        searchIcon.src = SearchDark;
+    });
+
+    inputField.addEventListener('focusout', () => {
+        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
+        searchIcon.src = Search;
     });
 
     menuIcon.addEventListener('click', () => {

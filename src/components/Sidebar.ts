@@ -22,10 +22,10 @@ const Sidebar = () => {
 
     const toggleSidebar = () => {
         if (sidebarOpen) {
-            nav.style.width = '0';
+            nav.style.left = '-20rem';
             sidebarOpen = !sidebarOpen;
         } else {
-            nav.style.width = '20rem';
+            nav.style.left = '0rem';
             sidebarOpen = !sidebarOpen;
         }
     }
