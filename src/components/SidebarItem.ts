@@ -32,3 +32,5 @@ class SidebarItem {
     }
 
 }
+
+export default SidebarItem;
