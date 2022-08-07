@@ -33,6 +33,7 @@ body {
     grid-template-areas: "head head"
                          "nav main";
     grid-template-rows: 2.8rem auto;
+    grid-template-columns: 20rem 1fr;
 }
 .top-bar {
     grid-area: head;

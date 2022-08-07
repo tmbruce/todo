@@ -21,11 +21,14 @@ const Sidebar = () => {
     }
 
     const toggleSidebar = () => {
+        let container = document.querySelector('.container') as HTMLDivElement;
         if (sidebarOpen) {
             nav.style.left = '-20rem';
+            container.style.gridTemplateColumns = '0 1fr';
             sidebarOpen = !sidebarOpen;
         } else {
             nav.style.left = '0rem';
+            container.style.gridTemplateColumns = '20rem 1fr';
             sidebarOpen = !sidebarOpen;
         }
     }
