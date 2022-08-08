@@ -28,7 +28,7 @@ body {
     box-sizing: border-box;
 }
 .container {
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-areas: "head head"
                          "nav main";
@@ -141,7 +141,7 @@ input:focus {
     top: 2.8rem;
     left: 0;
     background-color: var(--sidebar-color);
-    height: calc(100vh - 2.8rem);
+    height: calc(100% - 2.8rem);
     grid-area: nav;
     transition: ease-out 200ms;
     overflow-x: hidden;

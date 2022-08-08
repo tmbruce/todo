@@ -8,6 +8,7 @@ import events from '../store/events';
 
 const Sidebar = () => {
     let sidebarOpen = true;
+
     let nav = document.querySelector('.nav')! as HTMLDivElement;
     let inbox = new SidebarItem('inbox', Inbox, 'Inbox', '8');
     let today = new SidebarItem('today', CalendarDay, 'Today', '4');
