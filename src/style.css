@@ -93,7 +93,7 @@ body {
   background-image: url("./assets/search.svg");
   background-repeat: no-repeat;
   background-size: 28px 28px;
-  background-position: 3% 50%;
+  background-position: 5px 50%;
   height: 1.8rem;
   padding-left: calc(2.1rem + 5px);
   margin-left: 3px;

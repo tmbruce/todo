@@ -12,13 +12,14 @@ import htmlElement from "../utils/htmlElement";
 import events from '../store/events';
 
 const Header = () => {
+
+    let focus = false;
+
     let headerLeft = document.querySelector('.header-left')!;
     let menuIcon = iconBtn(Menu, 'menu-icon icon-btn');
     let homeIcon = iconBtn(Home, 'home-icon icon-btn');
-    let searchIcon = iconBtn(Search, 'search-icon');
     let inputField = htmlElement('input', 'header-search') as HTMLInputElement;
     inputField.placeholder = 'Search';
-    inputField.append(searchIcon);
 
     let headerRight = document.querySelector('.header-right')!;
     let addIcon = iconBtn(Add, 'plus-icon icon-btn');
@@ -31,30 +32,42 @@ const Header = () => {
     let notificationIcon = iconBtn(Bell, 'bell-icon icon-btn');
     let avatarIcon = iconBtn(Avatar, 'avatar-icon icon-btn');
 
-    inputField.addEventListener('mouseenter', () => {
-        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
-        let newIcon = iconBtn(SearchDark, 'search-icon');
-    })
+    const focusIn = () => {
+        let searchBox = document.querySelector('.header-search')! as HTMLInputElement;
+        searchBox.style.backgroundImage = `url(${SearchDark})`;  
+    }
+
+    const focusOut = () => {
+        let searchBox = document.querySelector('.header-search')! as HTMLInputElement;
+        searchBox.style.backgroundImage = `url(${Search})`;
+    }
+
     inputField.addEventListener('input', (e) => {
         let searchBox = e.target as HTMLInputElement;
         events.update('searchBoxTerm', searchBox.value);
     });
 
+    inputField.addEventListener('mouseenter', () => {
+        if (!focus) focusIn();
+    });
+
+    inputField.addEventListener('mouseleave', () => {
+        if (!focus) focusOut();
+    });
+
     inputField.addEventListener('focusin', () => {
-        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement; 
-        let newIcon = iconBtn(SearchDark, 'search-icon');
-        searchIcon.replaceWith(newIcon);
+        focus = true;
+        focusIn();
     });
 
     inputField.addEventListener('focusout', () => {
-        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
-        let newIcon = iconBtn(Search, 'search-icon');
-        searchIcon.replaceWith(newIcon);
+        focus = false;
+        focusOut();
     });
 
     menuIcon.addEventListener('click', () => {
         events.update('sidebarToggle', {})
-    })
+    });
 
     headerLeft.append(menuIcon, homeIcon, inputField);
     tasksContainer.append(circleIcon, tasksDone);
