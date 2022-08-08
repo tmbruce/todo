@@ -14,6 +14,7 @@ const Sidebar = () => {
     let today = new SidebarItem('today', CalendarDay, 'Today', '4');
     let month = new SidebarItem('upcoming', CalendarMonth, 'Upcoming', '2');
     let filters = new SidebarItem('filters', Squares, 'Filters & Labels');
+    let projectsContainer = document.querySelector('div');
 
     nav.append(inbox.render(), today.render(), month.render(), filters.render());
 

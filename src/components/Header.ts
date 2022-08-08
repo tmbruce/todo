@@ -31,19 +31,25 @@ const Header = () => {
     let notificationIcon = iconBtn(Bell, 'bell-icon icon-btn');
     let avatarIcon = iconBtn(Avatar, 'avatar-icon icon-btn');
 
+    inputField.addEventListener('mouseenter', () => {
+        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
+        let newIcon = iconBtn(SearchDark, 'search-icon');
+    })
     inputField.addEventListener('input', (e) => {
         let searchBox = e.target as HTMLInputElement;
         events.update('searchBoxTerm', searchBox.value);
     });
 
     inputField.addEventListener('focusin', () => {
-        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
-        searchIcon.src = SearchDark;
+        let searchIcon = document.querySelector('.search-icon') as HTMLImageElement; 
+        let newIcon = iconBtn(SearchDark, 'search-icon');
+        searchIcon.replaceWith(newIcon);
     });
 
     inputField.addEventListener('focusout', () => {
         let searchIcon = document.querySelector('.search-icon') as HTMLImageElement;
-        searchIcon.src = Search;
+        let newIcon = iconBtn(Search, 'search-icon');
+        searchIcon.replaceWith(newIcon);
     });
 
     menuIcon.addEventListener('click', () => {
