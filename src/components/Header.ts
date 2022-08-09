@@ -2,7 +2,7 @@ import Menu from '@assets/menu.svg';
 import Home from '@assets/home.svg';
 import Search from '@assets/search.svg';
 import SearchDark from '@assets/search_dark.svg';
-import Add from '@assets/add.svg';
+import Add from '@assets/plus.svg';
 import Question from '@assets/question.svg';
 import Bell from '@assets/bell.svg';
 import Avatar from '@assets/man.png';
