@@ -1,8 +1,8 @@
 :root {
   /* Light Mode */
   --percent-done: 75;
-  --logo-color: rgb(203, 86, 71);
-  --logo-color-light: rgb(211, 117, 106);
+  --logo-color: rgb(219, 76, 64);
+  --logo-color-light: rgb(227, 114, 103);
   --sidebar-color: rgb(250, 250, 250);
   --sidebar-active-color: rgb(239, 239, 239);
   --text-light: white;
@@ -156,7 +156,7 @@ body {
   background-color: var(--sidebar-color);
   height: calc(100% - 2.8rem);
   grid-area: nav;
-  transition: ease-out 200ms;
+  transition: ease-out 150ms;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
