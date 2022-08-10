@@ -217,14 +217,13 @@ body {
 .projects-header {
   font-size: 0.9rem;
   font-weight: bolder;
-  margin-left: 0.5rem;
+
+  margin-right: auto;
 }
 .project-add {
   padding: 3px;
   margin-right: 0;
   width: 1rem;
-}
-.project-add {
   display: none;
 }
 .nav:hover .project-add {
@@ -232,4 +231,13 @@ body {
 }
 .projects-header-container .icon-btn:hover {
   background-color: var(--sidebar-active-color);
+}
+.project-dropdown {
+  height: 1.1rem;
+  padding: 0.3rem;
+  margin-right: 5px;
+  transition: transform 150ms ease-in-out;
+}
+.project-open {
+  transform: rotate(-90deg);
 }
