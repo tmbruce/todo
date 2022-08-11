@@ -22,10 +22,12 @@ const Sidebar = () => {
     let filters = new SidebarItem('filters', Squares, 'Filters & Labels');
     let caret = iconBtn(Caret, 'project-dropdown');
     let projects = htmlElement('h3', 'projects-header');
+    let containerDiv = htmlElement('div', 'container-div');
     projects.textContent = 'Projects';
+    containerDiv.append(caret, projects);
     let projectAdd = iconBtn(Add, 'project-add icon-btn');
     let projectsContainer = htmlElement('div', 'projects-header-container');
-    projectsContainer.append(caret, projects, projectAdd);
+    projectsContainer.append(containerDiv, projectAdd);
 
     nav.append(inbox.render(), today.render(), month.render(), filters.render(), projectsContainer);
 
@@ -42,7 +44,7 @@ const Sidebar = () => {
     }
 
     const toggleSidebar = () => {
-        let container = document.querySelector('.container') as HTMLDivElement;
+        let container = document.querySelector('.container-div') as HTMLDivElement;
         if (sidebarOpen) {
             nav.style.left = `-${SIDEBAR_WIDTH}rem`;
             container.style.gridTemplateColumns = '0 1fr';
@@ -53,7 +55,7 @@ const Sidebar = () => {
             sidebarOpen = !sidebarOpen;
         }
     }
-    document.querySelector('.projects-header-container')?.addEventListener('click', toggleProjects);
+    document.querySelector('.container-div')?.addEventListener('click', toggleProjects);
     document.querySelector('.project-add')?.addEventListener('click', addProject );  
 
     events.subscribe('sidebarToggle', toggleSidebar)

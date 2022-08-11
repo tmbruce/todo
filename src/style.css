@@ -221,7 +221,7 @@ body {
   margin-right: auto;
 }
 .project-add {
-  padding: 3px;
+  padding: 4px;
   margin-right: 0;
   width: 1rem;
   display: none;
@@ -237,6 +237,11 @@ body {
   padding: 0.3rem;
   margin-right: 5px;
   transition: transform 150ms ease-in-out;
+}
+.container-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 .project-open {
   transform: rotate(-90deg);
