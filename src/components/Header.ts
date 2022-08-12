@@ -1,7 +1,5 @@
 import Menu from '@assets/menu.svg';
 import Home from '@assets/home.svg';
-import Search from '@assets/search.svg';
-import SearchDark from '@assets/search_dark.svg';
 import Add from '@assets/plus.svg';
 import Question from '@assets/question.svg';
 import Bell from '@assets/bell.svg';
@@ -32,37 +30,9 @@ const Header = () => {
     let notificationIcon = iconBtn(Bell, 'bell-icon icon-btn');
     let avatarIcon = iconBtn(Avatar, 'avatar-icon icon-btn');
 
-    const focusIn = () => {
-        let searchBox = document.querySelector('.header-search')! as HTMLInputElement;
-        searchBox.style.backgroundImage = `url(${SearchDark})`;  
-    }
-
-    const focusOut = () => {
-        let searchBox = document.querySelector('.header-search')! as HTMLInputElement;
-        searchBox.style.backgroundImage = `url(${Search})`;
-    }
-
     inputField.addEventListener('input', (e) => {
         let searchBox = e.target as HTMLInputElement;
         events.update('searchBoxTerm', searchBox.value);
-    });
-
-    inputField.addEventListener('mouseenter', () => {
-        if (!focus) focusIn();
-    });
-
-    inputField.addEventListener('mouseleave', () => {
-        if (!focus) focusOut();
-    });
-
-    inputField.addEventListener('focusin', () => {
-        focus = true;
-        focusIn();
-    });
-
-    inputField.addEventListener('focusout', () => {
-        focus = false;
-        focusOut();
     });
 
     menuIcon.addEventListener('click', () => {

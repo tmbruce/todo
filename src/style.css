@@ -107,6 +107,7 @@ body {
 }
 .header-search:hover {
   background-color: var(--text-light);
+  background-image: url("./assets/search_dark.svg");
 }
 .header-search:focus {
   outline: none;
@@ -114,6 +115,7 @@ body {
   color: var(--text-dark);
   background-color: var(--text-light);
   transition: ease-out 150ms;
+  background-image: url("./assets/search_dark.svg");
 }
 .circle-icon:hover {
   cursor: pointer;
