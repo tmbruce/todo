@@ -20,7 +20,7 @@ class Project {
         this.subProjects?.push(id);
     }
     
-    addTasl(id: string) {
+    addTask(id: string) {
         this.tasks.push(id);
     }
 }

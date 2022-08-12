@@ -28,11 +28,10 @@ const Sidebar = () => {
     let projectAdd = iconBtn(Add, 'project-add icon-btn');
     let projectsContainer = htmlElement('div', 'projects-header-container');
     projectsContainer.append(containerDiv, projectAdd);
-
     nav.append(inbox.render(), today.render(), month.render(), filters.render(), projectsContainer);
 
     const toggleActive = () => {
-
+        
     }
 
     const addProject = () => events.update('addProject', {});
